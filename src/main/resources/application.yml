@@ -1,0 +1,41 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: zuul
+  rabbitmq:
+    host: ${rabbit.host:localhost}
+    port: ${rabbit.port:5672}
+    username: ${rabbit.username:guest}
+    password: ${rabbit.password:guest}
+api:
+  login:
+    url:
+      path: /users-ws/users/login
+  registration:
+    url:
+      path: /users-ws/users
+  users:
+    actuator:
+      url:
+        path: /users-ws/actuator/*
+  zuul:
+    actuator:
+      url:
+        path: /actuator/*
+authorization:
+  token:
+    header:
+      name: Authorization
+      prefix: Bearer
+management:
+  endpoints:
+    web:
+      exposure:
+        include: beans,health,routes,httptrace
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
