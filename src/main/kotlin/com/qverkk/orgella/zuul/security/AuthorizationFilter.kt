@@ -18,7 +18,7 @@ class AuthorizationFilter(
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, chain: FilterChain) {
         val authorizationHeader: String? = request.getHeader(env.getProperty("authorization.token.header.name"))
 
-        if (authorizationHeader == null || authorizationHeader.startsWith(env.getProperty("authorization.token.header.prefix")!!)) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith(env.getProperty("authorization.token.header.prefix")!!)) {
             chain.doFilter(request, response)
             return
         }
