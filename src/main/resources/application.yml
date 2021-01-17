@@ -34,7 +34,7 @@ management:
       exposure:
         include: beans,health,routes,httptrace
 zuul:
-  sensitive-headers: Cookie,Set-Cookie
+  sensitive-headers:
 eureka:
   client:
     service-url:
