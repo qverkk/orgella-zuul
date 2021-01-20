@@ -15,6 +15,10 @@ api:
   registration:
     url:
       path: /users-ws/users
+  auctions:
+    find:
+      url:
+        path: /auctions-ws/auctions/find/*
   users:
     actuator:
       url:
