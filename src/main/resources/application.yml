@@ -16,6 +16,9 @@ api:
     url:
       path: /users-ws/users
   auctions:
+    details:
+      url:
+        path: /auctions-ws/auctions/details/*
     find:
       url:
         path: /auctions-ws/auctions/find/*
