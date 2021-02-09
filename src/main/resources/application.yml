@@ -16,12 +16,15 @@ api:
     url:
       path: /users-ws/users
   auctions:
+    reviews:
+      url:
+        path: /auctions-ws/auctions/reviews/**
     details:
       url:
-        path: /auctions-ws/auctions/details/*
+        path: /auctions-ws/auctions/details/**
     find:
       url:
-        path: /auctions-ws/auctions/find/*
+        path: /auctions-ws/auctions/find/**
   users:
     actuator:
       url:
